@@ -1,0 +1,6 @@
+SELECT Label, Type, Profile.Name
+FROM PermissionSet
+WHERE Id IN (
+    SELECT ParentId
+    FROM PermissionSetTabSetting
+    WHERE Name = 'Tab_Name')
